@@ -14,7 +14,7 @@ export default function RootPage() {
       <Text style={styles.title}>Ngeja</Text>
       <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

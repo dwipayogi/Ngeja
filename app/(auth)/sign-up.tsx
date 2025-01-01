@@ -71,15 +71,15 @@ export default function SignUpScreen() {
 
   if (pendingVerification) {
     return (
-      <>
-        <Text>Verify your email</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Verify your email</Text>
         <Input
           value={code}
           placeholder="Enter your verification code"
           onChangeText={(code) => setCode(code)}
         />
         <Button title="Verify" onPress={onVerifyPress} />
-      </>
+      </View>
     );
   }
 
@@ -94,7 +94,7 @@ export default function SignUpScreen() {
         placeholder="Enter username"
         onChangeText={(userName) => setUserName(userName)}
       />
-      
+
       <Text style={styles.label}>Email</Text>
       <Input
         value={emailAddress}
