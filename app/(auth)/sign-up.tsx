@@ -6,10 +6,13 @@ import { Link, useRouter } from "expo-router";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 
+import { Colors } from "@/constant/Colors";
+
 export default function SignUpScreen() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
+  const [userName, setUserName] = React.useState("");
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [pendingVerification, setPendingVerification] = React.useState(false);
@@ -84,11 +87,22 @@ export default function SignUpScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Ngeja</Text>
       <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
+
+      <Text style={styles.label}>Username</Text>
+      <Input
+        value={userName}
+        placeholder="Enter username"
+        onChangeText={(userName) => setUserName(userName)}
+      />
+      
+      <Text style={styles.label}>Email</Text>
       <Input
         value={emailAddress}
         placeholder="Enter email"
         onChangeText={(email) => setEmailAddress(email)}
       />
+
+      <Text style={styles.label}>Password</Text>
       <Input
         value={password}
         placeholder="Enter password"
@@ -97,7 +111,7 @@ export default function SignUpScreen() {
       />
       <Button title="Continue" onPress={onSignUpPress} />
       <View style={styles.linkContainer}>
-        <Text>Already have an account?</Text>
+        <Text style={styles.desc}>Already have an account?</Text>
         <Link href="/sign-in" style={styles.link}>
           <Text>Sign in</Text>
         </Link>
@@ -117,20 +131,30 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 8,
+    color: Colors.Blue500,
   },
   tagline: {
     fontSize: 14,
     fontWeight: "400",
     marginBottom: 8,
     fontStyle: "italic",
+    color: Colors.Blue500,
+  },
+  label: {
+    alignSelf: "flex-start",
+    color: Colors.Blue500,
+    fontWeight: "500",
   },
   linkContainer: {
     flexDirection: "row",
     gap: 4,
     marginTop: 12,
   },
+  desc: {
+    color: Colors.Blue500,
+  },
   link: {
-    color: "blue",
+    color: Colors.Blue800,
     fontWeight: "400",
   },
 });

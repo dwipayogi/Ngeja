@@ -1,0 +1,15 @@
+export const Colors = {
+  Blue50: '#EDF7FF',
+  Blue100: '#D6EAFF',
+  Blue200: '#B5DDFF',
+  Blue300: '#83C8FF',
+  Blue400: '#48AAFF',
+  Blue500: '#0095FF',
+  Blue600: '#0661FF',
+  Blue700: '#004CFF',
+  Blue800: '#083BC5',
+  Blue900: '#0D379B',
+  Blue950: '#0E235D',
+  Black: '#000000',
+  White: '#FFFFFF',
+}

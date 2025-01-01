@@ -1,5 +1,5 @@
 import { ClerkProvider, ClerkLoaded } from "@clerk/clerk-expo";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router/stack";
 
 import { tokenCache } from "@/cache";
 
@@ -15,7 +15,9 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
-        <Slot />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="index"/>
+        </Stack>
       </ClerkLoaded>
     </ClerkProvider>
   );

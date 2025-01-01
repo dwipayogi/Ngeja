@@ -6,6 +6,8 @@ import { Text, View, StyleSheet } from "react-native";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 
+import { Colors } from "@/constant/Colors";
+
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
@@ -46,11 +48,14 @@ export default function Page() {
       <Text style={styles.title}>Ngeja</Text>
       <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
 
+      <Text style={styles.label}>Email</Text>
       <Input
         value={emailAddress}
         placeholder="Enter email"
         onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
       />
+
+      <Text style={styles.label}>Password</Text>
       <Input
         value={password}
         placeholder="Enter password"
@@ -59,7 +64,7 @@ export default function Page() {
       />
       <Button title="Sign in" onPress={onSignInPress} />
       <View style={styles.linkContainer}>
-        <Text>Don't have an account?</Text>
+        <Text style={styles.desc}>Don't have an account?</Text>
         <Link href="/sign-up" style={styles.link}>
           <Text>Sign up</Text>
         </Link>
@@ -79,20 +84,30 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 8,
+    color: Colors.Blue500,
   },
   tagline: {
     fontSize: 14,
     fontWeight: "400",
     marginBottom: 8,
     fontStyle: "italic",
+    color: Colors.Blue500,
+  },
+  label: {
+    alignSelf: "flex-start",
+    color: Colors.Blue500,
+    fontWeight: "500",
   },
   linkContainer: {
     flexDirection: "row",
     gap: 4,
     marginTop: 12,
   },
+  desc: {
+    color: Colors.Blue500,
+  },
   link: {
-    color: "blue",
+    color: Colors.Blue800,
     fontWeight: "400",
   },
 });
