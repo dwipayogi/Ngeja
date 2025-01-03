@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: "space-between",
+    backgroundColor: Colors.Blue50,
   },
   stageContainer: {
     flexDirection: "row",

@@ -28,7 +28,7 @@ export default function RootPage() {
             </View>
           </Link>
           <View style={styles.sideContainer}>
-            <Link href="/belajar" style={styles.smallBox}>
+            <Link href="/kamus" style={styles.smallBox}>
               <View style={{ flex: 1 }}>
                 <Text style={styles.text}>Kamus</Text>
               </View>
