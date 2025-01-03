@@ -33,10 +33,10 @@ export default function RootPage() {
                 <Text style={styles.text}>Kamus</Text>
               </View>
             </Link>
-            <Link href="/belajar" style={styles.smallBox}>
+            <Link href="/peringkat" style={styles.smallBox}>
               <View>
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.text}>Capaian</Text>
+                  <Text style={styles.text}>Peringkat</Text>
                 </View>
               </View>
             </Link>
