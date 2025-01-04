@@ -20,7 +20,7 @@ export function UserRank({ position, username, xp, avatar }: UserRankProps) {
       //   return <Award className="w-6 h-6 text-amber-600" />;
       default:
         return (
-          <span className="text-lg font-bold text-gray-600">{position}</span>
+          <Text style={styles.username}>{position}</Text>
         );
     }
   };

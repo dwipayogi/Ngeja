@@ -17,6 +17,7 @@ export default function RootLayout() {
       <ClerkLoaded>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index"/>
+          <Stack.Screen name="level" />
           <Stack.Screen name="belajar"/>
           <Stack.Screen name="kamus"/>
           <Stack.Screen name="peringkat"/>

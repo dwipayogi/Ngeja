@@ -22,7 +22,7 @@ export default function RootPage() {
       </View>
       <View style={styles.container}>
         <View style={styles.mainContainer}>
-          <Link href="/belajar" style={{ flex: 1 }}>
+          <Link href="/level" style={{ flex: 1 }}>
             <View style={styles.learningBox}>
               <Text style={styles.text}>Belajar</Text>
             </View>
