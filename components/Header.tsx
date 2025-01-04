@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 import { Colors } from "@/constant/Colors";
 
-export default function Header({material, level}: {material: string, level: string}) {
+export default function Header({material, level}: {material: string, level?: string}) {
   return (
       <View style={styles.header}>
         <Text style={styles.material}>{material}</Text>

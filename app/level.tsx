@@ -1,13 +1,12 @@
 import { Text, View, ScrollView, StyleSheet } from "react-native";
 
+import Header from "@/components/Header";
 import Level from "@/components/Level";
 
 export default function LevelPage() {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Kosa Kata</Text>
-      </View>
+      <Header material="Level" />
       <ScrollView style={styles.content}>
         <Level icon="star" style={styles.button1} href="/belajar" />
         <Level icon="star" style={styles.button2} href="/belajar" />

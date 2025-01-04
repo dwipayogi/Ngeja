@@ -2,6 +2,8 @@ import { Text, View, ViewStyle, StyleSheet, StyleProp } from "react-native";
 import { Link, LinkProps } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";
 
+import { Colors } from "@/constant/Colors";
+
 export default function Level({
   text,
   icon,
@@ -38,22 +40,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "#EAF4FF",
     flex: 1,
     padding: 20,
   },
   circleContainer: {
     width: 80,
     height: 80,
-    backgroundColor: "#4285F4",
+    backgroundColor: Colors.Blue500,
     borderRadius: 40,
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 4,
-    borderColor: "#EAF4FF",
+    borderColor: Colors.Blue400,
   },
   text: {
-    color: "#FFFFFF",
+    color: Colors.White,
     fontSize: 24,
     fontWeight: "bold",
   },
