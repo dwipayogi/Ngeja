@@ -21,6 +21,7 @@ export default function RootLayout() {
           <Stack.Screen name="belajar"/>
           <Stack.Screen name="kamus"/>
           <Stack.Screen name="peringkat"/>
+          <Stack.Screen name="profil"/>
         </Stack>
       </ClerkLoaded>
     </ClerkProvider>
