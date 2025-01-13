@@ -45,23 +45,30 @@ export default function Page() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Ngeja</Text>
-      <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>Ngeja</Text>
+        <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
+      </View>
 
-      <Text style={styles.label}>Email</Text>
-      <Input
-        value={emailAddress}
-        placeholder="Enter email"
-        onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>Email</Text>
+        <Input
+          value={emailAddress}
+          placeholder="Enter email"
+          onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
+        />
+      </View>
 
-      <Text style={styles.label}>Password</Text>
-      <Input
-        value={password}
-        placeholder="Enter password"
-        secureTextEntry={true}
-        onChangeText={(password) => setPassword(password)}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>Password</Text>
+        <Input
+          value={password}
+          placeholder="Enter password"
+          secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
+        />
+      </View>
+
       <Button title="Sign in" onPress={onSignInPress} />
       <View style={styles.linkContainer}>
         <Text style={styles.desc}>Don't have an account?</Text>
@@ -77,8 +84,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
     padding: 18,
+    gap: 12,
+  },
+  textContainer: {
+    width: "100%",
+    gap: 4,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
@@ -102,6 +115,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 4,
     marginTop: 12,
+    alignSelf: "center",
   },
   desc: {
     color: Colors.Blue500,

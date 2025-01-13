@@ -25,6 +25,7 @@ export default function SignUpScreen() {
     // Start sign-up process using email and password provided
     try {
       await signUp.create({
+        username: userName,
         emailAddress,
         password,
       });
@@ -85,30 +86,39 @@ export default function SignUpScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Ngeja</Text>
-      <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>Ngeja</Text>
+        <Text style={styles.tagline}>Aplikasi Pembelajaran Bahasa Jawa</Text>
+      </View>
 
-      <Text style={styles.label}>Username</Text>
-      <Input
-        value={userName}
-        placeholder="Enter username"
-        onChangeText={(userName) => setUserName(userName)}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>Username</Text>
+        <Input
+          value={userName}
+          placeholder="Enter username"
+          onChangeText={(userName) => setUserName(userName)}
+        />
+      </View>
 
-      <Text style={styles.label}>Email</Text>
-      <Input
-        value={emailAddress}
-        placeholder="Enter email"
-        onChangeText={(email) => setEmailAddress(email)}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>Email</Text>
+        <Input
+          value={emailAddress}
+          placeholder="Enter email"
+          onChangeText={(email) => setEmailAddress(email)}
+        />
+      </View>
 
-      <Text style={styles.label}>Password</Text>
-      <Input
-        value={password}
-        placeholder="Enter password"
-        secureTextEntry={true}
-        onChangeText={(password) => setPassword(password)}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>Password</Text>
+        <Input
+          value={password}
+          placeholder="Enter password"
+          secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
+        />
+      </View>
+
       <Button title="Continue" onPress={onSignUpPress} />
       <View style={styles.linkContainer}>
         <Text style={styles.desc}>Already have an account?</Text>
@@ -124,8 +134,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    
     padding: 18,
+    gap: 12,
+  },
+  textContainer: {
+    width: "100%",
+    gap: 4,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
@@ -149,6 +166,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 4,
     marginTop: 12,
+    alignSelf: "center",
   },
   desc: {
     color: Colors.Blue500,

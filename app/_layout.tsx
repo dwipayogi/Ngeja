@@ -11,17 +11,17 @@ export default function RootLayout() {
       "Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env"
     );
   }
-  
+
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index"/>
+          <Stack.Screen name="index" />
           <Stack.Screen name="level" />
-          <Stack.Screen name="belajar"/>
-          <Stack.Screen name="kamus"/>
-          <Stack.Screen name="peringkat"/>
-          <Stack.Screen name="profil"/>
+          <Stack.Screen name="belajar" />
+          <Stack.Screen name="kamus" />
+          <Stack.Screen name="peringkat" />
+          <Stack.Screen name="profil" />
         </Stack>
       </ClerkLoaded>
     </ClerkProvider>
