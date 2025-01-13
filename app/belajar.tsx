@@ -10,7 +10,13 @@ import Button from "@/components/Button";
 
 export default function BelajarPage() {
   const [answer, setAnswer] = useState("");
+  const [check, setCheck] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+
+  const checkAnswer = () => {
+    setCheck(true);
+    setIsCorrect(false);
+  };
 
   return (
     <>
@@ -18,11 +24,11 @@ export default function BelajarPage() {
       <View style={styles.container}>
         <View>
           <View style={styles.stageContainer}>
-            <Stage />
-            <Stage />
-            <Stage />
-            <Stage />
-            <Stage />
+            <Stage completed={true} />
+            <Stage completed={true} />
+            <Stage completed={false} />
+            <Stage completed={false} />
+            <Stage completed={false} />
           </View>
 
           <View style={styles.questionContainer}>
@@ -36,16 +42,22 @@ export default function BelajarPage() {
         </View>
 
         <View style={styles.answerContainer}>
-          {isCorrect ? (
-            <View style={styles.trueAnswer}>
-              <Text style={styles.true}>Benar</Text>
-              <Text>Artinya: Selamat pagi, bagaimana kabar Anda?</Text>
+          {check ? (
+            <View>
+              {isCorrect ? (
+                <View style={styles.trueAnswer}>
+                  <Text style={styles.true}>Benar</Text>
+                  <Text>Artinya: Selamat pagi, bagaimana kabar Anda?</Text>
+                </View>
+              ) : (
+                <View style={styles.wrongAnswer}>
+                  <Text style={styles.wrong}>Salah</Text>
+                  <Text>Coba lagi</Text>
+                </View>
+              )}
             </View>
           ) : (
-            <View style={styles.wrongAnswer}>
-              <Text style={styles.wrong}>Salah</Text>
-              <Text>Coba lagi</Text>
-            </View>
+            <View></View>
           )}
 
           <Input
@@ -55,7 +67,7 @@ export default function BelajarPage() {
           />
           <Button
             title="Jawab"
-            onPress={() => {setIsCorrect(!isCorrect)}}
+            onPress={checkAnswer}
           />
         </View>
       </View>

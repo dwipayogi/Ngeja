@@ -6,13 +6,11 @@ import { Colors } from "@/constant/Colors";
 
 export default function Level({
   text,
-  icon,
   completed,
   style,
   href,
 }: {
   text?: string;
-  icon?: any;
   completed?: boolean;
   style?: StyleProp<ViewStyle>;
   href: LinkProps["href"];
@@ -22,9 +20,9 @@ export default function Level({
       <View style={[styles.circleContainer, style]}>
         {completed ? (
           <FontAwesome
-            name={icon}
-            size={30}
-            color="#FFFFFF"
+            name="star"
+            size={48}
+            color="#FFFF00"
             style={styles.icon}
           />
         ) : (

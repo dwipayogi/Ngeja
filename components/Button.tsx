@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.Blue500,
     padding: 12,
     borderRadius: 5,
+    minWidth: 100,
   },
   text: {
     color: Colors.Blue50,
